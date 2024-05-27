@@ -1,3 +1,6 @@
+import streamlit as st
+import pandas as pd
+
 def use_ids(ids):
     responsibilities = []
     for id in ids:
@@ -8,9 +11,10 @@ def use_ids(ids):
     
     df = pd.DataFrame({'responsibilities': responsibilities})
 
+    container = st.container()  # Create a new container for each output
 
     for index, row in df.iterrows():
-        st.markdown(f"""
+        container.markdown(f"""
         
 
             
